@@ -20,8 +20,14 @@ class Auth:
             return True
 
         for excluded_path in excluded_paths:
-            if fnmatch.fnmatch(path, excluded_path):
+            if excluded_path.startswith(path):
                 return False
+            elif path.startswith(excluded_path):
+                return False
+            elif excluded_path[-1] == "*":
+                if path.startswith(excluded_path[:-1]):
+                    return False
+
 
         return True
 
