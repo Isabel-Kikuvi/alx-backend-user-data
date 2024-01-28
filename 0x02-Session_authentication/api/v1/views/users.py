@@ -32,7 +32,7 @@ def view_one_user(user_id: str = None) -> str:
 
 @app_views.route('/users/<user_id>', methods=['DELETE'], strict_slashes=False)
 def delete_user(user_id: str = None) -> str:
-   """ DELETE /api/v1/users/:id
+    """ DELETE /api/v1/users/:id
     Returns empty JSON is the User has been correctly deleted
       - 404 if the User ID doesn't exist
     """
